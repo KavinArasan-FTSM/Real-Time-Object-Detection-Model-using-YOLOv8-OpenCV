@@ -1,8 +1,59 @@
-# Real-Time-Object-Detection-Model-using-YOLOv8-OpenCV
-This project demonstrates the use of a real-time object detection system powered by YOLOv8 and optimized to run on GPU (CUDA) for high performance. The model detects and counts selected everyday objects. The solution achieves smooth real-time detection with stable counting and class filtering.
+# YOLOv8 + ByteTrack Object Tracker
 
+## Description
+This project implements a **real-time object tracking system** using **YOLOv8** for detection and **ByteTrack** for stable ID tracking.  
+It identifies objects from a webcam stream, assigns persistent IDs, and counts instances of specified object classes.
 
-How To Run?
+Built in **Python** using **PyTorch** and **OpenCV**.
 
--Download the .py code and place it into your work folder.
--Run the code in command prompt by going to the directory, create virtual python environment for GPU usage, then run the .py code.
+---
+
+## Features
+- Real-time object detection and tracking  
+- Stable IDs for objects across frames  
+- Count of objects per class displayed on the frame  
+- Filter by allowed object classes  
+- FPS display for performance monitoring  
+
+---
+
+## Allowed Classes
+The tracker currently tracks the following objects:
+cup, chair, cell phone, book, person, scissors, keyboard, toothbrush, bottle, fork
+
+---
+
+## Tech Stack
+- Python 3.10+  
+- [YOLOv8](https://ultralytics.com/yolov8)  
+- ByteTrack tracker  
+- PyTorch  
+- OpenCV  
+
+---
+## Installation & Usage
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/<yourusername>/YOLOv8-Object-Tracker.git
+cd YOLOv8-Object-Tracker
+
+2. (Optional) Create and activate a virtual environment
+# Linux/macOS
+python -m venv venv
+source venv/bin/activate
+
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+3. Install dependencies
+pip install -r requirements.txt
+
+4. Download YOLOv8 weights
+ultralytics YOLOv8s.pt
+
+5. Run the tracker
+python src/yolo_bytetrack.py
+NOTE : Uses your default webcam (source=0), Press q to exit
+
